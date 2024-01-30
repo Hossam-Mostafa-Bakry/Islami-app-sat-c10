@@ -1,3 +1,4 @@
+import 'package:cycle_10/moduls/quran/page/quran_details_view.dart';
 import 'package:flutter/material.dart';
 
 class QuranTitleWidget extends StatelessWidget {
@@ -12,36 +13,58 @@ class QuranTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: Text(
-            suraIndex.toString(),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: "El Messiri",
-              fontWeight: FontWeight.normal,
-              fontSize: 22,
-            ),
-          ),
-        ),
-        Container(
-          width: 1,
-          height: 50,
-          color: Theme.of(context).primaryColor,
-        ),
-        Expanded(
-          child: Text(
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          QuranDetailsView.routeName,
+          arguments: SuraDetailsData(
             suraName,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: "El Messiri",
-              fontWeight: FontWeight.normal,
-              fontSize: 22,
+            suraIndex.toString(),
+          ),
+        );
+      },
+      child: Row(
+        children: [
+          Expanded(
+            child: Text(
+              suraIndex.toString(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: "El Messiri",
+                fontWeight: FontWeight.normal,
+                fontSize: 22,
+              ),
             ),
           ),
-        ),
-      ],
+          Container(
+            width: 1,
+            height: 50,
+            color: Theme.of(context).primaryColor,
+          ),
+          Expanded(
+            child: Text(
+              suraName,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: "El Messiri",
+                fontWeight: FontWeight.normal,
+                fontSize: 22,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
+}
+
+class SuraDetailsData {
+  final String suraName;
+  final String suraNumber;
+
+  SuraDetailsData(
+    this.suraName,
+    this.suraNumber,
+  );
 }
