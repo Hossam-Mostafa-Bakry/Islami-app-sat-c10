@@ -29,6 +29,8 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/fonts/
+    - assets/files/
 
   fonts:
     - family: El Messiri
