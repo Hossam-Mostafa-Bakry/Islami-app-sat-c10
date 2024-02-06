@@ -6,11 +6,9 @@ class TasbehView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Placeholder(
-        child: Text(
-          "Tasbeh View",
-          style: TextStyle(fontFamily: "El Messiri", fontSize: 40),
-        ),
+      child: Text(
+        "Tasbeh View",
+        style: TextStyle(fontFamily: "El Messiri", fontSize: 40),
       ),
     );
   }

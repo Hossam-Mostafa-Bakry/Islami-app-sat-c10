@@ -6,11 +6,9 @@ class RadioView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: const Placeholder(
-        child: Text(
-          "Radio View",
-          style: TextStyle(fontFamily: "El Messiri", fontSize: 40),
-        ),
+      child: Text(
+        "Radio View",
+        style: TextStyle(fontFamily: "El Messiri", fontSize: 40),
       ),
     );
   }

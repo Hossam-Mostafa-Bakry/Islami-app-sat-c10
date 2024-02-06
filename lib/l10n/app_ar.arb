@@ -4,5 +4,9 @@
   "hadith": "الأحاديث",
   "tasbeh": "تسبيح",
   "radio": "راديو",
-  "settings": "الأعدادات"
+  "settings": "الأعدادات",
+  "language": "اللغة",
+  "theme": "النمط",
+  "dark": "ليلي",
+  "light": "نهاري"
 }

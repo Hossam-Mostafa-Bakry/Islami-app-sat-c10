@@ -1,3 +1,4 @@
+import 'package:cycle_10/configration/settings_provider.dart';
 import 'package:cycle_10/moduls/hadeth/page/hadeth_view.dart';
 import 'package:cycle_10/moduls/quran/page/quran_view.dart';
 import 'package:cycle_10/moduls/radio/page/radio_view.dart';
@@ -5,6 +6,7 @@ import 'package:cycle_10/moduls/settings/page/settings_view.dart';
 import 'package:cycle_10/moduls/tasbesh/page/tasbeh_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class LayoutView extends StatefulWidget {
   static const String routeName = "layout";
@@ -21,11 +23,11 @@ class _LayoutViewState extends State<LayoutView> {
   @override
   Widget build(BuildContext context) {
     var local = AppLocalizations.of(context)!;
+    var vm = Provider.of<SettingsProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("assets/images/main_background.png"),
-            fit: BoxFit.cover),
+            image: AssetImage(vm.getMainBackground()), fit: BoxFit.cover),
       ),
       child: Scaffold(
         appBar: AppBar(

@@ -4,5 +4,9 @@
   "hadith": "hadith",
   "tasbeh": "Tasbeh",
   "radio": "Radio",
-  "settings": "Settings"
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "dark": "Dark",
+  "light": "Light"
 }

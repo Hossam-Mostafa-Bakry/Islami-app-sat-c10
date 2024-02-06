@@ -1,5 +1,7 @@
+import 'package:cycle_10/configration/settings_provider.dart';
 import 'package:cycle_10/moduls/hadeth/page/hadeth_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HadethDetailsView extends StatelessWidget {
   static const String routeName = "HadethDetails";
@@ -11,13 +13,12 @@ class HadethDetailsView extends StatelessWidget {
     var theme = Theme.of(context);
     var mediaQuery = MediaQuery.of(context).size;
     var args = ModalRoute.of(context)?.settings.arguments as HadethContentData;
+    var vm = Provider.of<SettingsProvider>(context);
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage(
-          "assets/images/main_background.png",
-        ),
+        image: AssetImage(vm.getMainBackground()),
         fit: BoxFit.cover,
       )),
       child: Scaffold(
@@ -40,17 +41,21 @@ class HadethDetailsView extends StatelessWidget {
             bottom: 40.0,
           ),
           decoration: BoxDecoration(
-              color: const Color(0xFFF8F8F8).withOpacity(0.8),
+              color: vm.isDark()
+                  ? const Color(0xFF141A2E).withOpacity(0.8)
+                  : const Color(0xFFF8F8F8).withOpacity(0.8),
               borderRadius: BorderRadius.circular(25.0)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 args.hadethTitle,
-                style: const TextStyle(
-                    fontFamily: "El Messiri",
-                    fontSize: 25,
-                    fontWeight: FontWeight.normal),
+                style: TextStyle(
+                  fontFamily: "El Messiri",
+                  fontSize: 25,
+                  fontWeight: FontWeight.normal,
+                  color: vm.isDark() ? Color(0xFFFACC1D) : Color(0xFF242424),
+                ),
               ),
               const Divider(
                 endIndent: 40,
@@ -62,7 +67,10 @@ class HadethDetailsView extends StatelessWidget {
                     Text(
                       args.hadethContent,
                       textAlign: TextAlign.center,
-                      style: theme.textTheme.bodySmall,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color:
+                            vm.isDark() ? Color(0xFFFACC1D) : Color(0xFF242424),
+                      ),
                     ),
                   ],
                 ),

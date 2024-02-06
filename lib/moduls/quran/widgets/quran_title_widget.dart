@@ -30,23 +30,23 @@ class QuranTitleWidget extends StatelessWidget {
             child: Text(
               suraIndex.toString(),
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontFamily: "El Messiri",
                 fontWeight: FontWeight.normal,
                 fontSize: 22,
               ),
             ),
           ),
-          Container(
+          const SizedBox(
             width: 1,
             height: 50,
-            color: Theme.of(context).primaryColor,
+            child: VerticalDivider(),
           ),
           Expanded(
             child: Text(
               suraName,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontFamily: "El Messiri",
                 fontWeight: FontWeight.normal,
                 fontSize: 22,

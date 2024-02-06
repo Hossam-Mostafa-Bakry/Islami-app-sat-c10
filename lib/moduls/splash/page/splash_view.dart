@@ -1,7 +1,9 @@
 import 'dart:async';
 
+import 'package:cycle_10/configration/settings_provider.dart';
 import 'package:cycle_10/layout/layout_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SplashView extends StatefulWidget {
   static const String routeName = "/";
@@ -27,11 +29,14 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
+    var vm = Provider.of<SettingsProvider>(context);
     Size mediaQuery = MediaQuery.of(context).size;
 
     return Scaffold(
       body: Image.asset(
-        "assets/images/splash_screen.png",
+        vm.isDark()
+            ? "assets/images/splash_dark_background.png"
+            : "assets/images/splash_screen.png",
         width: mediaQuery.width,
         height: mediaQuery.height,
         fit: BoxFit.cover,
