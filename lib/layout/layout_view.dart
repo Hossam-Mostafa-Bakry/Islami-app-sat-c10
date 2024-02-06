@@ -4,6 +4,7 @@ import 'package:cycle_10/moduls/radio/page/radio_view.dart';
 import 'package:cycle_10/moduls/settings/page/settings_view.dart';
 import 'package:cycle_10/moduls/tasbesh/page/tasbeh_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LayoutView extends StatefulWidget {
   static const String routeName = "layout";
@@ -19,6 +20,7 @@ class _LayoutViewState extends State<LayoutView> {
 
   @override
   Widget build(BuildContext context) {
+    var local = AppLocalizations.of(context)!;
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -27,7 +29,7 @@ class _LayoutViewState extends State<LayoutView> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("إسلامي"),
+          title: Text(local.islami),
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentIndex,
@@ -36,34 +38,34 @@ class _LayoutViewState extends State<LayoutView> {
               currentIndex = index;
             });
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage("assets/images/quran_icn.png"),
               ),
-              label: "Quran",
+              label: local.quran,
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage("assets/images/hadeth_icn.png"),
               ),
-              label: "Hadeth",
+              label: local.hadith,
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage("assets/images/sebha_icn.png"),
               ),
-              label: "Tasbeh",
+              label: local.tasbeh,
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage("assets/images/radio_icn.png"),
               ),
-              label: "Radio",
+              label: local.radio,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              label: "Settings",
+              label: local.settings,
             ),
           ],
         ),
