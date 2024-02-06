@@ -42,16 +42,42 @@ class ApplicationThemeManager {
         size: 26,
         color: Colors.white,
       ),
-      unselectedLabelStyle: TextStyle(
-        fontFamily: "El Messiri",
-        fontWeight: FontWeight.bold,
-        fontSize: 15,
-        color: Colors.white,
+        unselectedLabelStyle: TextStyle(
+          fontFamily: "El Messiri",
+          fontWeight: FontWeight.bold,
+          fontSize: 15,
+          color: Colors.white,
+        ),
       ),
-    ),
-    dividerColor: primaryColor,
-    dividerTheme: DividerThemeData(
-      color: primaryColor,
-    ),
-  );
+      dividerColor: primaryColor,
+      dividerTheme: const DividerThemeData(
+        color: primaryColor,
+        thickness: 1.5,
+      ),
+      textTheme: const TextTheme(
+        titleLarge: TextStyle(
+          fontFamily: "El Messiri",
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+          color: Color(0xFF242424),
+        ),
+        bodyLarge: TextStyle(
+          fontFamily: "El Messiri",
+          fontSize: 25,
+          fontWeight: FontWeight.w600,
+          color: Color(0xFF242424),
+        ),
+        bodyMedium: TextStyle(
+          fontFamily: "El Messiri",
+          fontSize: 25,
+          fontWeight: FontWeight.normal,
+          color: Color(0xFF242424),
+        ),
+        bodySmall: TextStyle(
+          fontFamily: "El Messiri",
+          fontSize: 20,
+          fontWeight: FontWeight.normal,
+          color: Color(0xFF242424),
+        ),
+      ));
 }

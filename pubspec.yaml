@@ -12,6 +12,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
 
   cupertino_icons: ^1.0.2
@@ -26,6 +29,7 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+  generate: true # Add this line
 
   assets:
     - assets/images/
@@ -39,5 +43,3 @@ flutter:
         - asset: assets/fonts/ElMessiri-SemiBold.ttf
         - asset: assets/fonts/ElMessiri-Medium.ttf
         - asset: assets/fonts/ElMessiri-Regular.ttf
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
